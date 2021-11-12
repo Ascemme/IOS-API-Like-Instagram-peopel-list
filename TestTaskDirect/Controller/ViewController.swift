@@ -145,7 +145,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
             case 6:
                 job = "backend"
             default:
-                job = "all"
+                job = ""
             }
             
             let searchName = user.firstName.localizedCaseInsensitiveContains(searchText)
@@ -154,7 +154,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
             let serachJob = user.department.lowercased().contains(searchText.lowercased())
             let serachdepartment = user.department.lowercased().contains(job)
             
-            if job != "all"{
+            if job != ""{
                 return (searchName || searchLastName || serachStatus || serachJob) && serachdepartment
             }
             else{
